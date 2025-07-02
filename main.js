@@ -1,3 +1,5 @@
+import BotaoConclui from "./componentes/conclui.js";
+import BotaoDeleta from "./componentes/deleta.js";
 const criarTarefa = (evento) =>{
     evento.preventDefault();
     const lista = document.querySelector('[data-ul]');
@@ -8,6 +10,8 @@ const criarTarefa = (evento) =>{
     tarefa.classList.add('task')
     const conteudo = `<p class="content">${valor}</p>`;
     tarefa.innerHTML = conteudo;
+    tarefa.appendChild(BotaoConclui());
+    tarefa.appendChild(BotaoDeleta());
     lista.appendChild(tarefa);
     
     input.value = "";
